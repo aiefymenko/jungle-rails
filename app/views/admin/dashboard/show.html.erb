@@ -1,2 +1,15 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin::Dashboard</h1>
+
+
+<div class="alert alert-info alert-dismissible d-flex align-items-center fade show">
+    <i class="bi-info-circle-fill"></i>
+    <strong class="mx-2">Info!</strong> Total &nbsp <%= link_to "products:", :admin_products %> &nbsp <%= @products %>
+
+</div>
+<div class="alert alert-info alert-dismissible d-flex align-items-center fade show">
+    <i class="bi-info-circle-fill"></i>
+    <strong class="mx-2">Info!</strong> Total categories:  <%= @categories %> &nbsp
+    <% Category.all.each do |category| %>
+      <%= link_to category.name, category %> &nbsp 
+    <% end %>
+</div>
